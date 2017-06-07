@@ -1,10 +1,12 @@
     var canvas= document.querySelector('canvas'); // getting the canvas element into canvas variable
     canvas.width=window.innerWidth;// resizing canvas height to full width
     canvas.height=window.innerHeight; // resizing canvas height to full height
+   
 
 
 
 var c= canvas.getContext('2d');
+var score;
 
            var x1=100;
            var y1=300;
@@ -82,19 +84,19 @@ function animate()
     
 c.beginPath();
 c.arc(1100,y,10,0,Math.PI*2,false);
-c.lineWidth= 20;
+//c.lineWidth= 20;
 c.strokeStyle="red";
 c.stroke();
 
 c.beginPath();
 c.arc(1100,y,30,0,Math.PI*2,false);
-c.lineWidth= 20;
+//c.lineWidth= 20;
 c.strokeStyle="yellow";
 c.stroke();
 
 c.beginPath();
 c.arc(1100,y,50,0,Math.PI*2,false);
-c.lineWidth= 20;
+//c.lineWidth= 20;
 c.strokeStyle="green";
 c.stroke();
     
@@ -109,21 +111,23 @@ if(y+50 > innerHeight || y - 50 < 0)
  var x2=100;
 
 function shoot()
-{  requestAnimationFrame(shoot);
+{ 
    
-    if(x2<1000 )
-    {
+    if(x2<1100 )
+    {  requestAnimationFrame(shoot);
     c.beginPath();
     c.moveTo(x2,y1);
     c.lineTo(x2+75,y1);
     c.lineWidth=2;
     c.stroke(); 
-    x2+=10; 
+    x2+=5; 
     
-    }
-   
-   
+    }  
+     else
+{    x2=100; }
 } 
+ 
+
 
  animate();
   draw();
