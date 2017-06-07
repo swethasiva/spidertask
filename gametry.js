@@ -36,7 +36,7 @@ var c= canvas.getContext('2d');
 
         function gameLoop()
         {
-            // change position based on speed
+            
             moveSelection();
             setTimeout("gameLoop()",5000);
         }
@@ -111,14 +111,14 @@ if(y+50 > innerHeight || y - 50 < 0)
 function shoot()
 {  requestAnimationFrame(shoot);
    
-    if(x1<1000 )
+    if(x2<1000 )
     {
     c.beginPath();
     c.moveTo(x2,y1);
     c.lineTo(x2+75,y1);
     c.lineWidth=2;
     c.stroke(); 
-    x2+=20; 
+    x2+=10; 
     
     }
    
