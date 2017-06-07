@@ -7,6 +7,7 @@
 
 var c= canvas.getContext('2d');
 var score;
+var cl=10;
 
            var x1=100;
            var y1=300;
@@ -84,19 +85,19 @@ function animate()
     
 c.beginPath();
 c.arc(1100,y,10,0,Math.PI*2,false);
-//c.lineWidth= 20;
+c.lineWidth= 10;
 c.strokeStyle="red";
 c.stroke();
 
 c.beginPath();
 c.arc(1100,y,30,0,Math.PI*2,false);
-//c.lineWidth= 20;
+c.lineWidth= 10;
 c.strokeStyle="yellow";
 c.stroke();
 
 c.beginPath();
 c.arc(1100,y,50,0,Math.PI*2,false);
-//c.lineWidth= 20;
+c.lineWidth= 10;
 c.strokeStyle="green";
 c.stroke();
     
@@ -112,8 +113,7 @@ if(y+50 > innerHeight || y - 50 < 0)
 
 function shoot()
 { 
-   
-    if(x2<1100 )
+     if(x2<1100 )
     {  requestAnimationFrame(shoot);
     c.beginPath();
     c.moveTo(x2,y1);
@@ -121,8 +121,8 @@ function shoot()
     c.lineWidth=2;
     c.stroke(); 
     x2+=5; 
-    
-    }  
+     
+  }
      else
 {    x2=100; }
 } 
