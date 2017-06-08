@@ -8,9 +8,8 @@
 var c= canvas.getContext('2d');
 var score =0 ;;
 var cl=5;
-function write()
-{
-  }
+var game=1;
+
           
            var x1=100;
            var y1=300;
@@ -97,6 +96,7 @@ c.strokeText(cl,300,80); }
 c.font = "30px Arial";
 c.strokeText("GAME OVER !!! RESET TO PLAY AGAIN",300,300);
  }
+   
 }
 
 
@@ -138,14 +138,15 @@ if(y+50 > innerHeight || y - 50 < 0)
         dy= -1 * dy;
     }
 
-    y+=dy;
+   if(game==1)
+   {y+=dy;}
     
 }
  var x2=100;
 
 
 function firearrow()
-{
+{ if(game==1){
     cl--;
     if(cl>=0)
         {
@@ -155,7 +156,7 @@ function firearrow()
     {   
         draw1();
     }
-   
+}
 }
 
 function shoot()
@@ -199,6 +200,15 @@ function reset()
     score=0;
 }
 
+function stop()
+{
+    game=0;
+}
+
+function start()
+{
+    game=1;
+}
  animate();
   draw();
 write();
