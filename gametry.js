@@ -6,9 +6,12 @@
 
 
 var c= canvas.getContext('2d');
-var score;
-var cl=10;
-
+var score =0 ;;
+var cl=5;
+function write()
+{
+  }
+          
            var x1=100;
            var y1=300;
 
@@ -67,6 +70,20 @@ c.stroke();
     c.lineTo(x1+75,y1);
     c.lineWidth=2;
     c.stroke();
+    
+    c.font = "30px Arial";
+c.strokeText("SCORE:",10,50);
+c.strokeText(score,150,50);
+if(cl>=0)
+    {
+c.font = "30px Arial";
+c.strokeText("ARROWS LEFT :",10,80);
+c.strokeText(cl,300,80); }
+    else 
+        {
+c.font = "30px Arial";
+c.strokeText("GAME OVER !!! RESET TO PLAY AGAIN",300,300);
+ }
 }
 
 
@@ -101,6 +118,8 @@ c.lineWidth= 10;
 c.strokeStyle="green";
 c.stroke();
     
+    
+     
 if(y+50 > innerHeight || y - 50 < 0)
     {
         dy= -1 * dy;
@@ -110,6 +129,21 @@ if(y+50 > innerHeight || y - 50 < 0)
     
 }
  var x2=100;
+
+
+function firearrow()
+{
+    cl--;
+    if(cl>=0)
+        {
+            shoot();
+        }
+    else
+    {   
+        draw1();
+    }
+   
+}
 
 function shoot()
 { 
@@ -122,12 +156,21 @@ function shoot()
     c.stroke(); 
     x2+=5; 
      
+     
   }
      else
-{    x2=100; }
+{    x2=100;
+}
 } 
  
 
 
+function reset()
+{
+    cl=5;
+    score=0;
+}
+
  animate();
   draw();
+write();
