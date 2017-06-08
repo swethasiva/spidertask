@@ -9,17 +9,39 @@
     {
         margin: 0px;
     }
+        
+    input
+        {
+            padding-left:20px;
+            padding-right:20px;
+            padding-top:5px;
+            padding-bottom:5px;
+            
+            border-style: inset;
+            border-color: cornflowerblue;
+            border-width:7px;
+            margin-left:20px;
+            margin-top:10px;
+            
+        }
+        
+        
+        div
+        {
+            background-color: bisque;
+        }
     </style>
-  
-      
+    <script src="jquery.min.js"></script>
+    
+    
 
-  <body onload="gameLoop();" onkeydown="moveSelection(event)" onkeyup="" onclick="firearrow()" >
+  <body onload="gameLoop();" onkeydown="moveSelection(event)" onkeyup=""  >
    <embed src="bgm.mp3" autostart="true" loop="true" hidden="true">
-      <canvas id="canvas"></canvas>
+      <canvas id="mycanvas"  onclick="firearrow()"></canvas>
       <center>
-      <div><input type="button" value="RESET" onmousemoves="reset()"/>
-           <input type="button" value="PAUSE" onmousemoves="reset()"/>
-           <input type="button" value="RESUME" onmousemoves="reset()"/>
+      <div><input type="button" value="RESET" onclick="reset()"/>
+           <input type="button" value="PAUSE"  id="stop" onclick="stop()"/>
+           <input type="button" value="RESUME" onclick="start()"/>
       </div>
       </center>
       <script type="text/javascript" src="gametry.js"></script>
