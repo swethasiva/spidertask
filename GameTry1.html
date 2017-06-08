@@ -13,9 +13,15 @@
   
       
 
-  <body onload="gameLoop();" onkeydown="moveSelection(event)" onkeyup="" onclick="shoot()" >
+  <body onload="gameLoop();" onkeydown="moveSelection(event)" onkeyup="" onclick="firearrow()" >
    <embed src="bgm.mp3" autostart="true" loop="true" hidden="true">
       <canvas id="canvas"></canvas>
+      <center>
+      <div><input type="button" value="RESET" onmousemoves="reset()"/>
+           <input type="button" value="PAUSE" onmousemoves="reset()"/>
+           <input type="button" value="RESUME" onmousemoves="reset()"/>
+      </div>
+      </center>
       <script type="text/javascript" src="gametry.js"></script>
   </body>
    
