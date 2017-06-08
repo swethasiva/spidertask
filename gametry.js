@@ -71,6 +71,19 @@ c.stroke();
     c.lineWidth=2;
     c.stroke();
     
+    c.beginPath();
+    c.moveTo(x1+65,y1+10);
+    c.lineTo(x1+75,y1);
+    c.lineWidth=2;
+    c.stroke();
+    
+    c.beginPath();
+    c.moveTo(x1+65,y1-10);
+    c.lineTo(x1+75,y1);
+    c.lineWidth=2;
+    c.stroke();
+    
+    
     c.font = "30px Arial";
 c.strokeText("SCORE:",10,50);
 c.strokeText(score,150,50);
@@ -154,13 +167,28 @@ function shoot()
     c.lineTo(x2+75,y1);
     c.lineWidth=2;
     c.stroke(); 
+     
+     c.beginPath();
+    c.moveTo(x2+65,y1+10);
+    c.lineTo(x2+75,y1);
+    c.lineWidth=2;
+    c.stroke();
+    
+    c.beginPath();
+    c.moveTo(x2+65,y1-10);
+    c.lineTo(x2+75,y1);
+    c.lineWidth=2;
+    c.stroke();
+     
     x2+=5; 
      
      
   }
      else
-{    x2=100;
+{   
+     x2=100;
 }
+   
 } 
  
 
