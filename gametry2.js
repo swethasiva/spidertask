@@ -290,4 +290,4 @@ function obstacle()
 
  animate();
   draw();
-write();
+
