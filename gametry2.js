@@ -1,7 +1,7 @@
     var canvas= document.querySelector('canvas'); // getting the canvas element into canvas variable
     canvas.width=window.innerWidth;// resizing canvas height to full width
     canvas.height=window.innerHeight; // resizing canvas height to full height
-   
+    var move=1;
 
 
 
@@ -27,7 +27,9 @@ var msg=0;
                draw();
             }
 
-            function moveSelection(event) {                    
+            function moveSelection(event) {   
+                if(move==1)
+                    {
                 switch (event.keyCode) {
 
                     case 38:
@@ -37,7 +39,7 @@ var msg=0;
                     case 40:
                         downArrowPressed();
                     break;
-                }
+                } }
             };
 
         function gameLoop()
@@ -56,7 +58,7 @@ function draw ()
 c.beginPath();
 c.arc(x1,y1,50,1.5*Math.PI,0.5*Math.PI);
 c.lineWidth=5;
-c.strokeStyle="black";
+c.strokeStyle="yellow";
 c.stroke();
     
 c.beginPath();
@@ -121,15 +123,15 @@ c.strokeStyle="red";
 c.stroke();
 
 c.beginPath();
-c.arc(1100,y,30,0,Math.PI*2,false);
+c.arc(1100,y,40,0,Math.PI*2,false);
 c.lineWidth= 10;
 c.strokeStyle="yellow";
 c.stroke();
 
 c.beginPath();
-c.arc(1100,y,50,0,Math.PI*2,false);
+c.arc(1100,y,70,0,Math.PI*2,false);
 c.lineWidth= 10;
-c.strokeStyle="green";
+c.strokeStyle="blue";
 c.stroke();
     
     
@@ -150,7 +152,8 @@ function firearrow()
 { if(game==1){
     cl--;
     if(cl>=0)
-        {
+        {   move=0;
+         
             shoot();
         }
     else
@@ -166,21 +169,26 @@ function shoot()
     {  requestAnimationFrame(shoot);
     c.beginPath();
     c.moveTo(x2,y1);
-    c.lineTo(x2+75,y1);
-    c.lineWidth=2;
+    c.lineTo(x2+95,y1);
+    c.lineWidth=5;
+     c.strokeStyle="red";
     c.stroke(); 
      
-     c.beginPath();
+    c.beginPath();
     c.moveTo(x2+65,y1+10);
-    c.lineTo(x2+75,y1);
-    c.lineWidth=2;
+    c.lineTo(x2+95,y1);
+    c.lineWidth=5;
+     c.strokeStyle="red";
     c.stroke();
     
     c.beginPath();
     c.moveTo(x2+65,y1-10);
-    c.lineTo(x2+75,y1);
-    c.lineWidth=2;
+    c.lineTo(x2+95,y1);
+    c.lineWidth=5;
+     c.strokeStyle="red";
     c.stroke();
+     
+    
      
     x2+=5; 
      
@@ -190,12 +198,13 @@ function shoot()
      else
 {    if(y+20>y1 && y-20<y1)
     {  score += 100;}
- else if(y+100>y1 && y-100<y1 && y+20<y1 && y-20>y1)
+ else if((y+40>y1  && y+20<y1 ) || (y-40<y1&& y-20>y1))
     {  score += 50;}
- else if(y+300>y1 && y-300<y1 && y+50<y1 && y-50>y1 && y+20<y1 && y-20>y1)
+ else if((y+70>y1  && y+40<y1) || ( y-40>y1 && y-70<y1) )
     {  score += 25;}
  
      x2=100;
+     move=1;
  
 }
    
@@ -219,25 +228,13 @@ function start()
     game=1;
 }
 
-/*function display()
-{game=0;
-    
- msg=1;
- disp();
-    
-   
-     setTimeout(start,3000);
- 
-    
-}*/
 
-/*function disp()
-{  requestAnimationFrame(disp);
-    if(msg==1&&game==0) 
-    {
-    c.font = "30px Arial";
-    c.strokeText("MISS",300,300); 
-    msg=0;}
+
+/*window.onload = function() {
+    var c = document.getElementById("Canvas");
+    var ctx = c.getContext("2d");
+    var img = document.getElementById("bahubali");
+    ctx.drawImage(img, 300, 00);
 }*/
  animate();
   draw();
