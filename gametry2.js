@@ -36,9 +36,21 @@ var obs=0;
                     case 38:
                         upArrowPressed();
                     break;
+                        
+                    case 87:
+                        upArrowPressed();
+                    break;
 
                     case 40:
                         downArrowPressed();
+                    break;
+                    
+                    case 83:
+                        downArrowPressed();
+                    break;
+                        
+                    case 32:
+                        firearrow();
                     break;
                 } }
             };
