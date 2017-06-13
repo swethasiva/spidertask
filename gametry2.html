@@ -2,13 +2,21 @@
     <style>
          canvas
     {
-        background-color: bisque;
+        background-image: url("forest.jpg");
+         height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     }
     
     body
     {
         margin: 0px;
     }
+    img 
+        {
+            display:none;
+        }
         
     input
         {
@@ -36,7 +44,7 @@
     
 
   <body onload="gameLoop();" onkeydown="moveSelection(event)" onkeyup=""  >
-   <embed src="bgm.mp3" autostart="true" loop="true" hidden="true">
+   <embed src="bgm1.mp3" autostart="true" loop="true" hidden="true">
       <canvas id="mycanvas"  onclick="firearrow()"></canvas>
       <center>
       <div><input type="button" value="RESET" onclick="reset()"/>
@@ -44,7 +52,8 @@
            <input type="button" value="RESUME" onclick="start()"/>
       </div>
       </center>
-      <script type="text/javascript" src="gametry2.js"></script>
+      <p><img src="bahubali.jpg"/></p>
+      <script type="text/javascript" src="gametry2.js" id="bahubali"></script>
   </body>
    
 </html>
