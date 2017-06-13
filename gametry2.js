@@ -198,7 +198,7 @@ function firearrow()
 
 function shoot()
 { 
-     if(x2<1100 )
+     if(x2<1000 )
     {  requestAnimationFrame(shoot);
     c.beginPath();
     c.moveTo(x2,y1);
